@@ -1,0 +1,24 @@
+python preprocess.py house-prices.csv 1
+
+python preprocess.py house-prices.csv 2
+
+# Example to fill missing data using the mean for the 'MSSubClass' column
+python preprocess.py house-prices.csv 3 --method mean --column MSSubClass
+
+# Example to delete rows with more than 30% missing values
+python preprocess.py house-prices.csv 4 --threshold 0.3
+
+# Example to delete columns with more than 40% missing values
+python preprocess.py house-prices.csv 5 --threshold 0.4
+
+python preprocess.py house-prices.csv 6
+
+# Example to scale the 'MSSubClass' column using Min-Max scaling
+python preprocess.py house-prices.csv 7 --method min_max --column MSSubClass
+# Example to scale the 'LotFrontage' column using Z-score standardization
+python preprocess.py house-prices.csv 7 --method z-score --column LotFrontage
+
+# Example to perform addition between 'LotFrontage' and 'MSSubClass' columns
+python preprocess.py house-prices.csv 8 --operation add --attr1 LotFrontage --attr2 MSSubClass
+# Example to perform subtraction between 'MSSubClass' and 'LotFrontage' columns
+python preprocess.py house-prices.csv 8 --operation subtract --attr1 MSSubClass --attr2 LotFrontage
